@@ -120,21 +120,6 @@ class MyBot extends TelegramLongPollingBot {
 
     //Метод проверяет на наличие слова "мопс" в сообщении
     boolean notificationOfAMention(String str){
-        char[] charArray = str.toLowerCase().toCharArray();
-        for (int i = 0; i < charArray.length; i++){
-            if (charArray[i] == 'м'){
-                int i1 = i + 1;
-                if (charArray[i1] == 'о'){
-                    i1 += 1;
-                    if (charArray[i1] == 'п'){
-                        i1 += 1;
-                        if (charArray[i1] == 'с'){
-                            return true;
-                        }
-                    }
-                }
-            }
-        }
-        return false;
+        return str.contains("mops");
     }
 }
